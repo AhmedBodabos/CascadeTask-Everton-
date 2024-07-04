@@ -1,0 +1,14 @@
+﻿@using EvertonProject.Models
+
+<div>
+    <h3>@teamInfo.TeamName Players</h3>
+    @foreach (var player in teamInfo.Players)
+    {
+        <PlayerComponent player="player" />
+    }
+</div>
+
+@code {
+    [CascadingParameter]
+    public TeamInfo teamInfo { get; set; }
+}

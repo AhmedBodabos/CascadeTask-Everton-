@@ -1,0 +1,13 @@
+﻿@using EvertonProject.Models
+
+<div>
+    <h4>Player Information</h4>
+    <p>Name: @player.Name</p>
+    <p>Position: @player.Position</p>
+    <p>Number: @player.Number</p>
+</div>
+
+@code {
+    [Parameter]
+    public Player player { get; set; }
+}

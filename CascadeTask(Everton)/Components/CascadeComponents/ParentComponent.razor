@@ -1,0 +1,33 @@
+﻿@page "/team"
+@using EvertonProject.Models
+@rendermode InteractiveServer
+
+<CascadingValue Value="teamInfo">
+    <ChildComponent />
+</CascadingValue>
+
+<button @onclick="UpdateStats">Update Stats</button>
+
+@code {
+    private TeamInfo teamInfo = new TeamInfo
+    {
+        TeamName = "Everton",
+        Wins = 10,
+        Draws = 5,
+        Losses = 3,
+        Players = new List<Player>
+        {
+            new Player { Name = "Jordan Pickford", Position = "Goalkeeper", Number = 1 },
+            new Player { Name = "Seamus Coleman", Position = "Defender", Number = 23 },
+            new Player { Name = "Dominic Calvert-Lewin", Position = "Forward", Number = 9 }
+        }
+    };
+
+    private void UpdateStats()
+    {
+        teamInfo.Wins++;
+        teamInfo.Draws++;
+        teamInfo.Losses++;
+        StateHasChanged();
+    }
+}

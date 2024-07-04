@@ -1,0 +1,14 @@
+﻿@using EvertonProject.Models
+
+<div>
+    <h3>@teamInfo.TeamName Statistics</h3>
+    <p>Wins: @teamInfo.Wins</p>
+    <p>Draws: @teamInfo.Draws</p>
+    <p>Losses: @teamInfo.Losses</p>
+    <GrandChildComponent />
+</div>
+
+@code {
+    [CascadingParameter]
+    public TeamInfo teamInfo { get; set; }
+}
