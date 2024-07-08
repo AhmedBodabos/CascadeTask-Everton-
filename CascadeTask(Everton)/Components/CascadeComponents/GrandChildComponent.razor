@@ -7,8 +7,17 @@
         <PlayerComponent player="player" />
     }
 </div>
+<div>
+    <h3>@teamInfo2.TeamName Players</h3>
+    @foreach (var player in teamInfo.Players)
+    {
+        <PlayerComponent player="player" />
+    }
+</div>
 
 @code {
-    [CascadingParameter]
+    [CascadingParameter(Name = ParamConstauts.first)]
     public TeamInfo teamInfo { get; set; }
+    [CascadingParameter(Name ="second")]
+    public TeamInfo teamInfo2 { get; set; }
 }

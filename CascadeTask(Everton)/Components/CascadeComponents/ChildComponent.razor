@@ -5,10 +5,16 @@
     <p>Wins: @teamInfo.Wins</p>
     <p>Draws: @teamInfo.Draws</p>
     <p>Losses: @teamInfo.Losses</p>
+    <h3>@teamInfo2.TeamName Statistics</h3>
+    <p>Wins: @teamInfo2.Wins</p>
+    <p>Draws: @teamInfo2.Draws</p>
+    <p>Losses: @teamInfo2.Losses</p>
     <GrandChildComponent />
 </div>
 
 @code {
-    [CascadingParameter]
+    [CascadingParameter(Name = ParamConstauts.first)]
     public TeamInfo teamInfo { get; set; }
+    [CascadingParameter(Name ="second")]
+    public TeamInfo teamInfo2 { get; set; }
 }

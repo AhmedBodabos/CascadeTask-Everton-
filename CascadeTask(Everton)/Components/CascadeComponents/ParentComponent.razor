@@ -2,8 +2,10 @@
 @using EvertonProject.Models
 @rendermode InteractiveServer
 
-<CascadingValue Value="teamInfo">
+<CascadingValue Value="teamInfo" Name=ParamConstauts.first>
+<CascadingValue Value="teamInfo2" Name="second">
     <ChildComponent />
+</CascadingValue>
 </CascadingValue>
 
 <button @onclick="UpdateStats">Update Stats</button>
@@ -20,6 +22,17 @@
             new Player { Name = "Jordan Pickford", Position = "Goalkeeper", Number = 1 },
             new Player { Name = "Seamus Coleman", Position = "Defender", Number = 23 },
             new Player { Name = "Dominic Calvert-Lewin", Position = "Forward", Number = 9 }
+        }
+    };private TeamInfo teamInfo2 = new TeamInfo
+    {
+        TeamName = "Arsenal",
+        Wins = 10,
+        Draws = 5,
+        Losses = 3,
+        Players = new List<Player>
+        {
+            new Player { Name = "Saka", Position = "Winger", Number = 7 },
+            
         }
     };
 

@@ -17,4 +17,9 @@ namespace EvertonProject.Models
         public string Position { get; set; }
         public int Number { get; set; }
     }
+
+    public static class ParamConstauts
+    {
+        public const String first = "first";
+    }
 }
